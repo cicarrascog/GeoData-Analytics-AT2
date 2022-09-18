@@ -1,0 +1,610 @@
+---
+title: "Data Analytics Workflows"
+author: "Carlos Carrasco"
+title-slide-attributes:
+    data-background-video: "video.mp4"
+    data-background-video-loop: true
+    data-background-color: "black"
+    data-background-video-muted: true
+format: 
+  revealjs:
+    theme: [default, Theme.scss]
+    scrollable: true
+    footer: "**Data Analytics Workflow** - GeoData Analytics Course - Carlos Carrasco"
+    navigation-mode: vertical
+    controls-layout: bottom-right
+    transition: slide
+    slide-number: true
+editor: visual
+bibliography: references.bib
+---
+
+```{r include=FALSE}
+library(knitr)
+
+```
+
+# What is a workflow? {background-color="black" background-image="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.5"}
+
+::: notes
+If we look to the dictionary, a workflow is defined a the sequence of
+steps to complete a working process from beginning to end. Cain and
+Haque extend this definition to include also the people and resources
+needed to complete that goal.
+
+A definition
+:::
+
+```{=html}
+
+  <blockquote> 
+  <p>A workflow is the sequence of steps involved in moving from the beginning to the end of a working process</p>
+  </blockquote>
+```
+::: {style="text-align:right"}
+~[Merriam-Webster Dictionary](https://www.merriam-webster.com/dictionary/workflow)~
+:::
+
+::: fragment
+> Workflow, is the set of tasks---grouped chronologically into
+> processes---and the set of people or resources needed for those tasks,
+> that are necessary to accomplish a given goal .
+
+::: {style="text-align:right"}
+~@cain2008~
+:::
+:::
+
+## What is a workflow? {visibility="hidden"}
+
+> A workflow consists of an orchestrated and repeatable pattern of
+> activity, enabled by the systematic organization of resources into
+> processes that transform materials, provide services, or process
+> information. It can be depicted as a sequence of operations, the work
+> of a person or group, the work of an organization of staff, or one or
+> more simple or complex mechanisms
+
+::: {style="text-align:right"}
+~[Workflow - Wikipedia](https://en.wikipedia.org/wiki/Workflow)~
+:::
+
+# Objective of a workflow {background-color="black" background-image="https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.5"}
+
+::: r-fit-text
+::: notes
+The objective of a workflow is to define the components of a project
+cycles so that the time required to execute a task is minimized and the
+waiting time between tasks is eliminated entirely.
+:::
+
+-   Define and construct the components of project cycles
+
+-   A logical order helps to minimize transfer time between tasks
+
+-   Reduce the time required to complete a tasks
+:::
+
+::: notes
+The objective of a workflow is to define the components of a project
+cycles so that the time required to execute a task is minimized and the
+transfer time between tasks is eliminated entirely
+
+The implementation of a workflow helps to think about the different
+steps that are required to complete a task. Some benefits that raise
+from this excise are:
+:::
+
+##  {background-color="black" background-image="https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.5"}
+
+::: incremental
+-   Improve operations
+
+-   Identification of repeated tasks
+
+-   Streamline a process
+
+-   Minimize mistakes
+
+-   Helps to assure reproducibility.
+:::
+
+::: notes
+-   Having a workflow helps to improve operation, since ensure a job
+    will be completed in order.For instance, you won't log a core before
+    you drill it.
+
+-   The analysis of each individual steps helps the identification of
+    redundant task.
+
+-   The knowledge of which work has been done, and what is yet to be
+    done.
+
+-   Following a workflow reduce mistakes, for example, of forgetting to
+    do something.
+
+-   Finally, the use of workflow helps to keep consistensy between
+    project cycles, which help to assure the reproducibility.
+
+    -   By defining specific steps, it is possible to ensure that a job
+        is completed in the proper order (example from geology), by the
+        specific person and in the specified timeframe.
+
+    -   The analysis of individual steps allow to identify tasks that
+        are repeated or acomplished the same objective. - Helps to
+        stremline a process given that is known **which work has been
+        done, and what is yet to be done.**
+
+    -   Following a workflow reduce the change of mistake by forgetting
+        doing something.
+
+    -   Following a method helps to consistency between working cycle
+:::
+
+# A workflow example: The Scientific Method {background-color="black" background-image="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.5"}
+
+::: notes
+An example of a well known workflow is the scientific method. It
+describes a research process from the beginning to end, starting with a
+question or observation, then drawing a hypothesis to answer that
+question, making a plan or designing a experiment to test that
+hypothesis, collect data from the experiment to then analyse and
+evaluate and decide if the hypothesis is accepted or not.
+
+A workflow is domain specific, it has it beginning in railway
+manufacture and the scientific method is just an example of research
+workflow. In the rest of this video, we will focus in data analytics
+workflows
+:::
+
+```{r}
+#| fig-cap: Drawing from [math and doodles](https://www.pinterest.com.au/pin/473018767108410537/)
+include_graphics('Scientific_method.jpg')
+```
+
+# What is a data analytics workflow {.smaller background-color="black" background-image="https://images.unsplash.com/photo-1586892478407-7f54fcec5b89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.5"}
+
+::: notes
+@wickham2016 summarize the data analytics process into import, tidy, a
+cyclic process of exploration including feature engineering,
+visualization and modelling prior to communication.
+
+A data analytics workflow differs from other workflows in that there is
+not a specific end from from the begging, and that many steps are
+iterative and needs to be repeated.
+:::
+
+```{r}
+#| fig-cap: 'Figure from @wickham2016'
+#| fig-align: 'center'
+knitr::include_graphics('data-science-explore.png')
+```
+
+## What is a data analytics workflow {.smaller background-color="black" background-image="https://images.unsplash.com/photo-1586892478407-7f54fcec5b89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.5"}
+
+::: notes
+There are several workflows that have been developed for Data analytics.
+The KDnuggets poll on methodologies shows that nearly 60% of the
+respondents use standardized methodologies like the CRISP-DM, SEMMA or
+KDD process. Nearly 30% prefer to use their own methodology and a small
+portion use other or domain/organization specific workflows.
+:::
+
+```{r}
+#| fig-cap: The [KDnuggets](https://www.kdnuggets.com/polls/2014/analytics-data-mining-data-science-methodology.html) 2014  methodology poll.
+include_graphics('KdNuggetsPoll.png')
+```
+
+# Standardized workflows {background-color="black" background-image="https://images.unsplash.com/photo-1537884944318-390069bb8665?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.2"}
+
+::: notes
+Here we are going to review some of the most popular, which an incresing
+grade of complexity, Includes the SEMMA, OSEMN, the Blistzein and
+Pfister, KDD and CRISP-DM workflows.
+
+Despite being different, they all share the same iterative core, similar
+to the process suggested by @wickham2016
+:::
+
+There are several standardized workflows for data analytics
+
+-   SEMMA
+
+-   OSEMN
+
+-   Blitzstein & Pfister
+
+-   KDD Process
+
+-   CRISP-DM
+
+We will have a quick tour through them
+
+## SEMMA {background-color="black" background-image="https://images.unsplash.com/photo-1537884944318-390069bb8665?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.2"}
+
+This is a workflow developed by the SAS institute.
+
+::: fragment
+-   **S**ample: Collect/Select the data required for sampling
+-   **E**xplore: This consider the Exploratory Data analysis
+-   **M**odify: Feature engineering (Normalization, Dimension reduction)
+-   **M**odel: Test various models
+-   **A**ssess: Evaluate the the model results
+:::
+
+::: notes
+-   The SEMMA is a workflow developed by the SAS institute for it SAS
+    software. SEMMA stands for Sample, Explore, Modify, Model, Assess.
+    This data selection, EDA, feature engineering, modelling and
+    evaluation.
+
+This workflow focus in the modelling process, not in the knowledge that
+can be obtain from it.
+
+However, this method is that do not consider the understanding of the
+background of the problem to solve, focusing mainly in the modelling
+process, and SAS specify that is a logical organization for tool set of
+the SAS software.
+
+-   also it was designed to be applied to users of the SAS software
+
+-   Statistical Analysis System (SAS) American multinational developer
+    of analytics software based in Cary, North Carolina.
+:::
+
+## OSEMN {.smaller background-color="black" background-image="https://images.unsplash.com/photo-1537884944318-390069bb8665?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.2"}
+
+**O**btain, **S**crub, **E**xplore, **M**odel, I**n**terpret
+
+```{r}
+#| fig-cap: OSEMN workflow drawn by [Data Professor](https://towardsdatascience.com/the-data-science-process-a19eb7ebc41b)
+#| cap-location: margin
+include_graphics('OSEMN.jpeg')
+
+```
+
+::: notes
+The Obtain, Scrub, explore, Model and interpret Data workflow was
+proposed by Hilary Mason and Chris Wiggins in 2010. This method
+consider, obtain data, Scrub or data cleaning and processing,
+Exploratory data analysis, modelling using ML algorithms and finally
+interpret the data. In contrast with SEMMA, the interpretation step
+consider obtain insights from the data that can be used take decisions.
+
+The OSEMN workflows considers that the scrubbing is the most time
+consuming step, whereas the interpretation is the most important.
+
+The **OSEMN framework** is comprised of 5 major steps and can be
+summarized as follows:
+
+1.  ***Obtain Data*** --- Data forms the requisite of the data science
+    process and data can come from pre-existing ones or from newly
+    acquired data (from surveys), from newly queried data (from
+    databases or APIs), downloaded from the internet (e.g. from
+    repositories available on the cloud such as GitHub) or extracted
+
+2.  ***Scrub Data*** --- Scrubbing the data is essentially data cleaning
+    and this phase is considered to be the most time-consuming as it
+    involves handling missing data as well as pre-processing it to be as
+    error-free and uniform as possible.
+
+3.  ***Explore Data*** --- This is essentially exploratory data analysis
+    and this phase allows us to gain an understanding of the data such
+    that we can figure out the course of actions and areas that we can
+    to explore in the modeling phase. This entails the use of
+    descriptive statistics and data visualizations.
+
+4.  ***Model Data***--- Here, we make use of machine learning algorithms
+    in efforts to make sense of data and gain useful insights that are
+    essential for data-driven decision-making.
+
+5.  ***Interpret Results*** --- This is perhaps one of the most
+    important phase and yet the least technical as it pertains to
+    actually making sense of the data by figuring out how to simplify
+    and summarize results from all the models built. This entails
+    drawing meaningful conclusion and rationalizing actionable insights
+    that would essentially allow us to figure out what the next course
+    of actions are. For example, what are the most important features
+    that influences the class labels (**Y** variables).
+:::
+
+## Blitzstein & Pfister workflow {.smaller background-color="black" background-image="https://images.unsplash.com/photo-1537884944318-390069bb8665?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.2"}
+
+```{r}
+#| fig-cap: Workflow taught at Harvard CS109 Data science Course by Joe Blitzstein and Hanspeter Pfister ([Github](https://github.com/cs109/2015/blob/master/Lectures/01-Introduction.pdf) repository)
+include_graphics('BandPworkflow.png')
+```
+
+::: notes
+The Blitzstein & Pfister workflow is taught on the CS109 course at
+Harvard university.
+
+In contrast to previos methodologies, this workflow starts by asking a
+question that needs to be answered with the data. In other words, it set
+a goal from the beginning. The core of the process is similar, including
+collecting, exploring and modelling the data. However, the final
+objective of this workflow is communicate and visualize findings.
+
+Pay attention how each stage is interconnected.
+
+Then the data to answer the specific question need to be collected and
+explored. When the data is ready and insight have been obatind during
+EDA, models are built on it. Finally, the results need to visualized and
+communicated.
+
+Blistztein and Pfister consider that there is an iterative process
+between each process.
+:::
+
+## KDD Process {.smaller background-color="black" background-image="https://images.unsplash.com/photo-1537884944318-390069bb8665?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.2"}
+
+**K**nowledge **D**iscovery in **D**atabases
+
+```{r}
+#| fig-cap: Knoledge Discovery in Databases process by @fayyad1996
+include_graphics('KDD.png')
+```
+
+::: notes
+Reference: \@fayyad1996
+
+The KDD process is considered as the predecessor of CRISP-DM, but not
+for that is outdated.
+
+In contrast to other methods, the knoledge discovery in database starts
+with the understanding of the domain specific knoledge and setting the
+goal for the process. Then , similar to previous workflows, Consider
+collecting, cleaning and modelling the data, however, it specify a
+specific transformation stage dedicated to feature engineering as the
+modify step in the SEMMA workflow.
+
+The final objective is to act in the obtained knowledge, which could
+consider from decision making process or just document and report.
+
+First is developing an understanding of the application domain and the
+relevant prior knowledge and identifying the goal of the KDD process
+from the customer's viewpoint.
+
+Second is creating a target data set: selecting a data set, or focusing
+on a subset of variables or data samples, on which discovery is to be
+performed.
+
+Third is data cleaning and pre-processing. Basic operations include
+removing noise if appropriate, collecting the necessary information to
+model or account for noise, deciding on strategies for handling missing
+data fields, and accounting for time-sequence information and known
+changes.
+
+Fourth is data reduction and projection: finding useful features to
+represent the data depending on the goal of the task. With
+dimensionality reduction or transformation methods, the effective number
+of variables under consideration can be reduced, or invariant
+representations for the data can be found.
+
+Fifth is matching the goals of the KDD process (step 1) to a particular
+data-mining method. For example, summarization, classification,
+regression, clustering, and so on, are described later as well as in
+Fayyad, Piatetsky-Shapiro, and Smyth (1996).
+
+Sixth is exploratory analysis and model and hypothesis selection:
+choosing the datamining algorithm(s) and selecting method(s) to be used
+for searching for data patterns. This process includes deciding which
+models and parameters might be appropriate (for example, models of
+categorical data are different than models of vectors over the reals)
+and matching a particular data-mining method with the overall criteria
+of the KDD process (for example, the end user might be more interested
+in understanding the model than its predictive capabilities).
+
+Seventh is data mining: searching for patterns of interest in a
+particular representational form or a set of such representations,
+including classification rules or trees, regression, and clustering. The
+user can significantly aid the data-mining method by correctly
+performing the preceding steps.
+
+Eighth is interpreting mined patterns, possibly returning to any of
+steps 1 through 7 for further iteration. This step can also involve
+visualization of the extracted patterns and models or visualization of
+the data given the extracted models.
+
+Ninth is acting on the discovered knowledge: using the knowledge
+directly, incorporating the knowledge into another system for further
+action, or simply documenting it and reporting it to interested parties.
+This process also includes checking for and resolving potential
+conflicts with previously believed (or extracted) knowledge.
+:::
+
+## CRISP-DM {background-color="black" background-image="https://images.unsplash.com/photo-1537884944318-390069bb8665?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.2"}
+
+**CR**oss **I**ndustry **S**tandard **P**rocess for **D**ata **M**ining
+
+```{r}
+#| fig-cap: Figure by Kennet Jensen on [Wikipedia](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining#/media/File:CRISP-DM_Process_Diagram.png)
+
+knitr::include_graphics('CRISP-DM_Process_Diagram.png')
+  
+```
+
+::: notes
+The **CR**oss **I**ndustry **S**tandard **P**rocess for **D**ata
+**M**ining is currently one of the most popular methodologies used in
+Data Analytics. It consider a iterative process of 6 steps, starting
+with the Project or business understanding that includes setting up the
+objectives and understand the domain specific knowledge. The main
+difference with previous workflows comes with the data understanding
+stage. Previous workflows consider the EDA afters preparing the data,
+however the CRISP-DM, start with EDA, which help to assess the quality
+of the data, decide if more data is required and getting preliminary
+insights that can be used during the data preparation stage.
+
+The core still consider data preparation, including feature engineering,
+and modelling to create knowledge from the data.
+
+During the evaluation, the objectives defined during the project
+understanding phase are revisited, and depending on the results, this
+can be redefined starting the cycle again or move into the deployment
+stage that consider how the knoledge obtain will be transfer or
+communicated.
+
+In 2015 IBM extended the CRISP-DM methodology to include version control
+and security, however, this is more associated with computer sciences.
+
+1.  ***Business/Project understanding*** --- This entails the
+    understanding of a project's objectives and requirements from the
+    business viewpoint. Such business perspectives are used to figure
+    out what business problems to solve via the use of data mining.
+
+2.  ***Data understanding*** --- This phase allows us to become
+    familiarize with the data and this involves performing exploratory
+    data analysis. Such initial data exploration may allow us to figure
+    out which subsets of data to use for further modeling as well as aid
+    in the generation of hypothesis to explore.
+
+3.  ***Data preparation*** --- This can be considered to be the most
+    time-consuming phase of the data mining process as it involves
+    rigorous data cleaning and pre-processing as well as the handling of
+    missing data.
+
+4.  ***Modelling*** --- The pre-processed data are used for model
+    building in which learning algorithms are used to perform
+    multivariate analysis.
+
+5.  ***Evaluation*** --- In performing the 4 aforementioned steps, it is
+    important to evaluate the accrued results and review the process
+    performed thusfar to determine whether the originally set business
+    objectives are met or not. If deemed appropriate, some steps may
+    need to be performed again. Rinse and repeat. Once it is deemed that
+    the results and process are satisfactory then we are ready to move
+    to deployment. Additionally, in this evaluation phase, some findings
+    may ignite new project ideas for which to explore.
+
+6.  ***Deployment*** --- Once the model is of satisfactory quality, the
+    model is then deployed, which may range from being a simple report,
+    an API that can be accessed via programmatic calls, a web
+    application, etc.
+:::
+
+# Summary {background-color="black" background-image="https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.5"}
+
+::: notes
+If we go back the process describe by Wickham and Grolemund, we can
+observe that all this workflows have the same core structure, that
+considers a continuous exploration Cycle. Some of them like the OSEMN or
+SEMMA focus in the modelling process while KDD, CRISP-DM and Blitztein
+and Pfister add domain specific knowledge into their workflows.
+
+I would light to highlight the non-linearity of all this workflows, and
+many stages need to be revisited, every time with new knowledge. The
+iterative nature of data analytics workflow make them dynamic process.
+
+Finally, It is not possible to say that there is a workflow better than
+other, we are all different people and there might be methodologies that
+works better for some than for others. If you remember the KD nuggets
+poll, nearly a quarter of the respondent used their own workflow!. But
+something we could agree on is that having any workflow is definitely
+better than not having one at all.
+:::
+
+```{r}
+#| fig-cap: 'Figure from @wickham2016'
+#| fig-align: 'center'
+knitr::include_graphics('data-science-explore.png')
+```
+
+# Your future self will thank you! {background-color="black" background-image="https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.25"}
+
+::: notes
+@berthold2010
+:::
+
+# Slides and code availability {background-color="black" background-image="https://images.unsplash.com/photo-1659958661414-59d7bd483853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.25"}
+
+::: notes
+If you want to access the presentation and the code use to create it,
+this is available at :
+https://github.com/cicarrascog/GeoData-Analytics-AT2
+:::
+
+This presentation is available at
+<https://github.com/cicarrascog/GeoData-Analytics-AT2>
+
+# References {.smaller background-color="black" background-image="https://images.unsplash.com/photo-1659958661414-59d7bd483853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.25"}
+
+::: {#refs}
+:::
+
+##  {.smaller background-color="black" background-image="https://images.unsplash.com/photo-1659958661414-59d7bd483853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.25"}
+
+[KDnuggets 2014 methodology
+poll](https://www.kdnuggets.com/polls/2014/analytics-data-mining-data-science-methodology.html)
+
+[Understanding Workflow by
+Oracle](https://docs.oracle.com/cd/E17984_01/doc.898/e14729/understand_workflow.htm)
+
+[The Data Science Process... by Chanin Nantasenamat in Towards Data
+Science](https://towardsdatascience.com/the-data-science-process-a19eb7ebc41b)
+
+[CS109 Data Science slides by Blitztein and Pfister at
+github.com](https://github.com/cs109/2015/blob/master/Lectures/01-Introduction.pdf)
+
+[SEMMA - Wikipedia](https://en.wikipedia.org/wiki/SEMMA)
+
+[A Taxonomy of Data Science by Mason and Wiggins at dataist (
+archive.org)](https://web.archive.org/web/20211219192027/http://www.dataists.com/2010/09/a-taxonomy-of-data-science/)
+
+[What is CRISP DM? by Data Science Process
+Alliance](https://www.datascience-pm.com/crisp-dm-2/)
+
+[Cross-industry standard process for data mining (CRIPS-DM) -
+Wikipedia](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining)
+
+[Workflow Definition & Meaning -
+Merriam-Webster](https://www.merriam-webster.com/dictionary/workflow)
+
+[Best Practices For Data Science Project Workflows and File
+Organizations by
+neptune.ai](https://neptune.ai/blog/best-practices-for-data-science-project-workflows-and-file-organizations#:~:text=Since%20the%20purpose%20of%20a%20workflow%20is%20to,to%20be%20done.%20The%20development%20of%20a%20workflow)
+
+[7 Benefits of Workflow Management System To Help You Free From Chaos
+(kissflow.com)](https://kissflow.com/workflow/benefits-of-workflow-management-system/#:~:text=Benefits%20of%20workflow%20management%20systems%201%20Reduced%20errors.,transparency%2C%20and%20control.%20...%207%20Improved%20work%20culture)
+
+[Initial steps toward reproducible research by Karl
+Broman](https://kbroman.org/steps2rr/)
+
+##  {.smaller background-color="black" background-image="https://images.unsplash.com/photo-1659958661414-59d7bd483853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" background-size="cover" background-repeat="no-repeat" background-opacity="0.25"}
+
+Video by Pressmaster:
+https://www.pexels.com/video/running-a-light-of-digital-information-3129977/
+
+Photo by
+<a href="https://unsplash.com/@isaacmsmith?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Isaac
+Smith</a> on
+<a href="https://unsplash.com/s/photos/productividad?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by
+<a href="https://unsplash.com/@alvarordesign?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alvaro
+Reyes</a> on
+<a href="https://unsplash.com/s/photos/workflow?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by
+<a href="https://unsplash.com/@hansreniers?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hans
+Reniers</a> on
+<a href="https://unsplash.com/s/photos/science?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by
+<a href="https://unsplash.com/@kellysikkema?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kelly
+Sikkema</a> on
+<a href="https://unsplash.com/s/photos/methodology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by
+<a href="https://unsplash.com/@pankajpatel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pankaj
+Patel</a> on
+<a href="https://unsplash.com/s/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by
+<a href="https://unsplash.com/@isaacmsmith?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Isaac
+Smith</a> on
+<a href="https://unsplash.com/s/photos/graph?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by
+<a href="https://unsplash.com/@snik3rs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Rafal
+Jedrzejek</a> on
+<a href="https://unsplash.com/images?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
